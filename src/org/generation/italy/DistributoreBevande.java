@@ -4,23 +4,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-/*
-Esercizio: Distributore bevande
-Scrivere una classe DistributoreBevande con i seguenti attributi:
 
-bevande: HashMap<String,> che contiene un elenco di bevande, 
-per ognuna bevanda il nome e il prezzo
-credito: float che indica il denaro inserito nel distributore
-e i seguenti metodi:  */
-
-public class distributoreBevande {
+public class DistributoreBevande {
 	
 	private float credito;
 	private HashMap<String,Float> bevande=new HashMap<>();
 	private ArrayList<Float> moneteAccettate= new ArrayList<>(); 
 	
 
-	public distributoreBevande() {
+	public DistributoreBevande() {
 	
 			bevande.put("coca-cola",2.0f);
 			bevande.put("fanta",2.0f);
