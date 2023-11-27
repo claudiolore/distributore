@@ -27,18 +27,29 @@ Nella classe distributore modificare l'hashmap bevande in un HashMap<Integer, Be
 	String scelta, risposta="";
 	distributoreBevande db1=new distributoreBevande();
 	
-	
+	System.out.println("Bevande disponibili");
+	db1.elencaBevande();
+	db1.mostraCredito();
 	do {
-		System.out.println("bevande disponibili");
-		db1.elencaBevande();
 		System.out.println("Inserisci moneta");
 		monetaInserita=Float.parseFloat(sc.nextLine());
 		db1.inserisciMoneta(monetaInserita);
-		
-		
+		db1.mostraCredito();
+		System.out.println("Vuoi inserire altre monete?");
+		risposta=sc.nextLine();
 		
 	}while(risposta.equals("si"));
 
-	}
-
+	do {
+		System.out.println("\nScegli una bevanda");
+		scelta =sc.nextLine();
+		db1.erogaBevande(scelta);
+		System.out.println("\nIl tuo credito ora: ");
+		db1.mostraCredito();
+		System.out.println("\nVuoi altro?");
+		risposta=sc.nextLine();
+	} while(risposta.equals("si"));
+	
+	
+}
 }

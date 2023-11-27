@@ -43,6 +43,10 @@ public class distributoreBevande {
 			{
 				credito+=monetaInserita;
 			}
+			else
+			{
+				System.out.println("\nMoneta non supportata, ritenta");
+			}
 			
 	}
 	
@@ -63,12 +67,12 @@ public class distributoreBevande {
 	public void elencaBevande()
 	{
 		for(String n:bevande.keySet())
-			System.out.println(n + " " + bevande.get(n) + " " +  bevande.get(n) + "€");
+			System.out.println(n + "\t" + bevande.get(n) + "€");
 	}
 	
 	public void mostraCredito()
 	{
-		System.out.println("Credito: "+credito);
+		System.out.println("\nCredito: "+credito);
 	}
 	
 }
