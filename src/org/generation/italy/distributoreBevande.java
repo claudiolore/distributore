@@ -11,9 +11,7 @@ Scrivere una classe DistributoreBevande con i seguenti attributi:
 bevande: HashMap<String,> che contiene un elenco di bevande, 
 per ognuna bevanda il nome e il prezzo
 credito: float che indica il denaro inserito nel distributore
-e i seguenti metodi:
-inserisciMoneta(float moneta)              
-erogaBevanda(String nomeBevanda)    */
+e i seguenti metodi:  */
 
 public class distributoreBevande {
 	Scanner sc=new Scanner(System.in);
@@ -21,7 +19,7 @@ public class distributoreBevande {
 	private HashMap<String,Float> bevande=new HashMap<>();
 	private ArrayList<Float> moneteAccettate= new ArrayList<>(); 
 	float monetaInserita;
-	
+	String scelta, risposta;
 
 	public distributoreBevande(float credito,  HashMap<String, Float> bevande,
 			ArrayList<Float> moneteAccettate) {
@@ -48,7 +46,7 @@ public class distributoreBevande {
 	/*(inserisce una moneta nel ditributore incrementando il credito)*/
 	public void inserisciMoneta ()
 	{
-		
+		do {
 			System.out.println("Inserisci una moneta (0.10/0.20/0.50/1.0/2.0)");
 			monetaInserita=Float.parseFloat(sc.nextLine());
 			
@@ -61,7 +59,9 @@ public class distributoreBevande {
 			{
 				System.out.println("Moneta non esistente o accettata");
 			}
-		
+			System.out.println("Vuoi inserire una nuova moneta?");
+			risposta=sc.nextLine();
+		}while(risposta.equals("si"));
 	}
 	
 	
@@ -70,19 +70,14 @@ public class distributoreBevande {
 	 "bevanda erogata. Il tuo resto è: ...."*/
 	public void erogaBevande ()
 	{
-		System.out.println("Cosa vuoi bere?");
-		String scelta=sc.nextLine();
-		if(bevande.containsKey(scelta))
+		if(bevande.containsKey(scelta)&&credito>bevande.get(scelta))
 		{
-			for(int i=0;i<bevande.size();i++)
-			{
-				if(bevande.containsValue(scelta))
-				{
-					System.out.println("Prezzo: "+bevande.get(scelta));
-				}
-			}
-			System.out.println("Bevanda erogata");
-			
+			System.out.println("Bevanda erogata: "+bevande.get(scelta));
+			credito=credito-bevande.get(scelta);
+		}
+		else 
+		{
+			System.out.println("Benvanda non disponibile o credito insufficiente");
 		}
 	}
 	

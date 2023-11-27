@@ -23,8 +23,9 @@ carica(int quantità): incrementa la quantità disponibile del valore quantità
 Nella classe distributore modificare l'hashmap bevande in un HashMap<Integer, Bevande>  (chiave: codice della bevanda; valore: tutto l'oggetto bevanda), e modificare la classe Distributore di conseguenza, gestendo anche la quantità disponibile
  */
 	distributoreBevande db1=new distributoreBevande();
+	
 	db1.inserisciMoneta();
-		
+	db1.erogaBevande();
 		
 	}
 
