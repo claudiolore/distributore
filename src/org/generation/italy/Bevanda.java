@@ -1,6 +1,6 @@
 package org.generation.italy;
 
-public class Bevande {
+public class Bevanda {
 	
 /*Nella classe distributore modificare l'hashmap bevande in un HashMap<Integer, Bevande>
  	(chiave: codice della bevanda; valore: tutto l'oggetto bevanda), 
@@ -10,25 +10,25 @@ public class Bevande {
 	Integer codice;
 	String nome;
 	float prezzo;
-	int quantita;
+	int quantitaDisponibile;
 	
-	public Bevande(Integer codice, String nome, float prezzo, int quantita) {
+	public Bevanda(Integer codice, String nome, float prezzo) {
 	
 		this.codice = codice;
 		this.nome = nome;
 		this.prezzo = prezzo;
-		this.quantita = quantita;
-		quantita=5;
+		
+		quantitaDisponibile=5;
 	}
 	
 	public void eroga()
 	{
-		quantita-=1;
+		quantitaDisponibile-=1;
 	}
 	
-	public void carica()
+	public void carica(int quantita)
 	{
-		quantita=quantita+quantita;
+		quantita=quantitaDisponibile+quantita; 
 	}
 	
 	
