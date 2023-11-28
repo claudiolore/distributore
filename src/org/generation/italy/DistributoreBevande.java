@@ -18,7 +18,6 @@ public class DistributoreBevande {
 			bevande.put(1, new Bevanda(3, "redbull", 3.50f));
 			bevande.put(1, new Bevanda(4, "acqua", 0.50f));
 			bevande.put(1, new Bevanda(5, "sprite", 2.50f));
-			
 			moneteAccettate.add(0.10f);
 			moneteAccettate.add(0.20f);
 			moneteAccettate.add(0.50f);
