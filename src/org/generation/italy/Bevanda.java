@@ -17,7 +17,6 @@ public class Bevanda {
 		this.codice = codice;
 		this.nome = nome;
 		this.prezzo = prezzo;
-		
 		quantitaDisponibile=5;
 	}
 	

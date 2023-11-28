@@ -12,20 +12,21 @@ public class Main {
 	DistributoreBevande db1=new DistributoreBevande();
 	int scelta;
 	
-	System.out.println("Bevande disponibili");
-	db1.elencaBevande();
-	db1.mostraCredito();
 	do {
-		System.out.println("Inserisci moneta");
-		monetaInserita=Float.parseFloat(sc.nextLine());
-		db1.inserisciMoneta(monetaInserita);
+		System.out.println("Bevande disponibili");
+		db1.elencaBevande();
 		db1.mostraCredito();
-		System.out.println("Vuoi inserire altre monete?");
-		risposta=sc.nextLine();
+		do {
+			System.out.println("Inserisci moneta");
+			monetaInserita=Float.parseFloat(sc.nextLine());
+			db1.inserisciMoneta(monetaInserita);
+			db1.mostraCredito();
+			System.out.println("Vuoi inserire altre monete?");
+			risposta=sc.nextLine();
 		
 	}while(risposta.equals("si"));
 
-	do {
+	
 		System.out.println("\nScegli una bevanda");
 		scelta =Integer.parseInt(sc.nextLine());
 		db1.erogaBevande(scelta);
