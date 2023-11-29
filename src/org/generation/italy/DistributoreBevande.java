@@ -63,12 +63,19 @@ public class DistributoreBevande {
 	}
 	
 	public void caricaBevanda(Integer scelta, Integer quantita) {
-			if(bevande.containsKey(scelta))
-			{
-				bevande.get(scelta).carica(quantita);
-			}
+		if(bevande.containsKey(scelta))
+		{
+			bevande.get(scelta).carica(quantita);
+		}
 	}
-
+	
+	public void controlloDisponibilita(Integer scelta) {
+		if(bevande.containsKey(scelta))
+		{
+			System.out.println(bevande.get(scelta).getQuantitaDisponibile());
+		}
+	}
+	
 	public float getCredito() {
 		return credito;
 	}
