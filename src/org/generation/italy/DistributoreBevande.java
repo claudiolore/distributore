@@ -38,12 +38,12 @@ public class DistributoreBevande {
 	}
 	
 	public void erogaBevande (Integer scelta) {
-		if(bevande.containsKey(scelta)&&credito>bevande.get(scelta).prezzo)
+		if(bevande.containsKey(scelta)&&credito>bevande.get(scelta).getPrezzo())
 		{
-			if(bevande.get(scelta).quantitaDisponibile>0)
+			if(bevande.get(scelta).getQuantitaDisponibile()>0)
 			{
-				System.out.println("Bevanda erogata: "+bevande.get(scelta).nome);
-				credito=credito-bevande.get(scelta).prezzo;
+				System.out.println("Bevanda erogata: "+bevande.get(scelta).getNome());
+				credito=credito-bevande.get(scelta).getPrezzo();
 				bevande.get(scelta).eroga();
 			}
 			else
@@ -55,18 +55,44 @@ public class DistributoreBevande {
 		{
 			System.out.println("Benvanda non disponibile o credito insufficiente");
 		}
-		
-		
 	}
 	
 	public void elencaBevande() {
 		for(Integer n:bevande.keySet())
-			System.out.println(n + "  " + bevande.get(n).nome +" "+ bevande.get(n).prezzo + "€");
+			System.out.println(n + "  " + bevande.get(n).getNome() +" "+ bevande.get(n).getPrezzo() + "€");
 	}
 	
-	public void mostraCredito()
-	{
-		System.out.println("\nCredito: "+credito);
+	public void caricaBevanda(Integer scelta, Integer quantita) {
+			if(bevande.containsKey(scelta))
+			{
+				bevande.get(scelta).carica(quantita);
+			}
 	}
+
+	public float getCredito() {
+		return credito;
+	}
+
+	public void setCredito(float credito) {
+		this.credito = credito;
+	}
+
+	public HashMap<Integer, Bevanda> getBevande() {
+		return bevande;
+	}
+
+	public void setBevande(HashMap<Integer, Bevanda> bevande) {
+		this.bevande = bevande;
+	}
+
+	public ArrayList<Float> getMoneteAccettate() {
+		return moneteAccettate;
+	}
+
+	public void setMoneteAccettate(ArrayList<Float> moneteAccettate) {
+		this.moneteAccettate = moneteAccettate;
+	}
+	
+
 	
 }

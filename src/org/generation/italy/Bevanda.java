@@ -2,16 +2,52 @@ package org.generation.italy;
 
 public class Bevanda {
 	
-/*Nella classe distributore modificare l'hashmap bevande in un HashMap<Integer, Bevande>
- 	(chiave: codice della bevanda; valore: tutto l'oggetto bevanda), 
- 	e modificare la classe Distributore di conseguenza, 
- 	gestendo anche la quantità disponibile */
+	private Integer codice;
+	private String nome;
+	private float prezzo;
+	private int quantitaDisponibile;
 	
-	Integer codice;
-	String nome;
-	float prezzo;
-	int quantitaDisponibile;
-	
+	public Bevanda(Integer codice, String nome, float prezzo, int quantitaDisponibile) {
+		super();
+		this.codice = codice;
+		this.nome = nome;
+		this.prezzo = prezzo;
+		this.quantitaDisponibile = quantitaDisponibile;
+		quantitaDisponibile=5;
+	}
+
+	public Integer getCodice() {
+		return codice;
+	}
+
+	public void setCodice(Integer codice) {
+		this.codice = codice;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public float getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(float prezzo) {
+		this.prezzo = prezzo;
+	}
+
+	public int getQuantitaDisponibile() {
+		return quantitaDisponibile;
+	}
+
+	public void setQuantitaDisponibile(int quantitaDisponibile) {
+		this.quantitaDisponibile = quantitaDisponibile;
+	}
+
 	public Bevanda(Integer codice, String nome, float prezzo) {
 	
 		this.codice = codice;
