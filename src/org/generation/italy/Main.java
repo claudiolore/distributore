@@ -30,6 +30,7 @@ public class Main {
 		if(risposta.equals("1"))			//compra bevanda
 		{
 			do {
+				db1.elencaBevande();
 				System.out.println("\nIl tuo credito ora: "+db1.getCredito());
 				System.out.println("\nScegli una bevanda");
 				scelta =Integer.parseInt(sc.nextLine());
@@ -58,9 +59,6 @@ public class Main {
 				scelta =Integer.parseInt(sc.nextLine());
 				System.out.println("Hai scelto: "+scelta);
 				System.out.println("\nDisponibilita: "+ db1.controlloDisponibilita(scelta));
-				System.out.println("Quanti ne vuoi aggiungere?");
-				quantita=Integer.parseInt(sc.nextLine());
-				db1.caricaBevanda(scelta, quantita);
 				System.out.println("\nVuoi controllare altro?");
 				risposta=sc.nextLine();
 			}
@@ -71,7 +69,7 @@ public class Main {
 			do {
 				System.out.println("\nScegli una bevanda");
 				scelta =Integer.parseInt(sc.nextLine());
-				System.out.println("Qquante ne vuoi aggiungere?");
+				System.out.println("Quante ne vuoi aggiungere?");
 				quantita=Integer.parseInt(sc.nextLine());
 				db1.caricaBevanda(scelta,quantita);;
 				System.out.println("\nVuoi caricare altro?");
@@ -81,12 +79,12 @@ public class Main {
 		}
 		else
 		{
-			System.out.println("Inserimento non valido riprova");
+			System.out.println("\nInserimento non valido riprova");
 			risposta="si";
 			continue;
 		}
 		
-		System.out.println("vuoi tornare al menu(1) o uscire(2)?");
+		System.out.println("\nVuoi tornare al menu(1) o uscire(2)?");
 		risposta=sc.nextLine();
 		if(risposta.equals("1"))
 		{

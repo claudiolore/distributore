@@ -37,7 +37,8 @@ public class Bevanda {
 	}
 
 	public void setPrezzo(float prezzo) {
-		this.prezzo = prezzo;
+		if (prezzo>0)
+			this.prezzo = prezzo;
 	}
 
 	public int getQuantitaDisponibile() {

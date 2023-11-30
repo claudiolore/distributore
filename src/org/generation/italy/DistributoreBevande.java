@@ -22,7 +22,7 @@ public class DistributoreBevande {
 			moneteAccettate.add(0.50f);
 			moneteAccettate.add(1.0f);
 			moneteAccettate.add(2.0f);
-			moneteAccettate.add(15.0f);
+			moneteAccettate.add(10.0f);
 			credito=0;
 	}
 	
@@ -38,7 +38,7 @@ public class DistributoreBevande {
 	}
 	
 	public void erogaBevande (Integer scelta) {
-		if(bevande.containsKey(scelta)&&credito>bevande.get(scelta).getPrezzo())
+		if(bevande.containsKey(scelta) && credito>bevande.get(scelta).getPrezzo())
 		{
 			if(bevande.get(scelta).getQuantitaDisponibile()>0)
 			{
@@ -69,11 +69,12 @@ public class DistributoreBevande {
 		}
 	}
 	
-	public void controlloDisponibilita(Integer scelta) {
+	public int controlloDisponibilita(Integer scelta) {
 		if(bevande.containsKey(scelta))
 		{
-			System.out.println(bevande.get(scelta).getQuantitaDisponibile());
+			return bevande.get(scelta).getQuantitaDisponibile();
 		}
+		return 0;
 	}
 	
 	public float getCredito() {
