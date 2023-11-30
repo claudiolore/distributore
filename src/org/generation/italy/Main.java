@@ -55,6 +55,7 @@ public class Main {
 		else if (risposta.equals("3"))		//controlla disponibilita
 		{
 			do {
+				db1.elencaBevande();
 				System.out.println("\nScegli una bevanda di cui controllare la quantita");
 				scelta =Integer.parseInt(sc.nextLine());
 				System.out.println("Hai scelto: "+scelta);
@@ -67,6 +68,7 @@ public class Main {
 		else if (risposta.equals("4"))		//carica 
 		{
 			do {
+				db1.elencaBevande();
 				System.out.println("\nScegli una bevanda");
 				scelta =Integer.parseInt(sc.nextLine());
 				System.out.println("Quante ne vuoi aggiungere?");
